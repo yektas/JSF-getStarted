@@ -13,16 +13,16 @@
 <h:body>
 
     <h:form>
-        First name: <p:inputText value="#{student.firstName}"/>
+        First name: <p:inputText value="#{studentController.firstName}"/>
 
         <br></br>
 
-        Last name: <p:inputText value="#{student.lastName}"/>
+        Last name: <p:inputText value="#{studentController.lastName}"/>
 
         <br></br>
 
         <p:outputLabel for="country" value="Country:"/>
-        <p:selectOneMenu id="country" value="#{student.country}" style="width:125px">
+        <p:selectOneMenu id="country" value="#{studentController.country}" style="width:125px">
             <f:selectItem itemLabel="Select One" itemValue=""/>
             <f:selectItem itemLabel="Turkey" itemValue="Turkey"/>
             <f:selectItem itemLabel="Cambodia" itemValue="Cambodia"/>

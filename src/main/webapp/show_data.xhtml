@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title> Datas </title>
+</h:head>
+
+<h:body>
+
+    <p:chart type="pie" model="#{car.pieModel}" style="width:400px;height:300px"/>
+
+    <p:dataTable var="student" value="#{studentView.studentList}">
+        <f:facet name="header">
+            Student List
+        </f:facet>
+        <p:ajax event="sort" skipChildren="false"/>
+        <p:column headerText="First Name" sortBy="#{student.firstName}">
+            <h:outputText value="#{student.firstName}"/>
+        </p:column>
+        <p:column headerText="Last Name" sortBy="#{student.lastName}">
+            <h:outputText value="#{student.lastName}"/>
+        </p:column>
+        <p:column headerText="Grade Point Average(GPA)" sortBy="#{student.gpa}">
+            <h:outputText value="#{student.gpa}"/>
+        </p:column>
+
+        <f:facet name="footer">
+            In total there are #{studentView.studentList.size()} students.
+        </f:facet>
+    </p:dataTable>
+
+
+</h:body>
+
+</html>
